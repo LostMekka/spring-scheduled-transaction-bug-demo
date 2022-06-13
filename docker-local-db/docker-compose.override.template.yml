@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  spring_scheduled_transaction_bug_demo_local_db:
+    ports:
+      # change the local port if you have multiple database containers running at the same time.
+      # example: "12345:3306" will map this container to localhost:12345
+      - "3306:3306"

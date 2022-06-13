@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  spring_scheduled_transaction_bug_demo_local_db:
+    image: mysql:8
+    command: --max_allowed_packet=32505856
+    container_name: spring_scheduled_transaction_bug_demo_local_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: "spring_scheduled_transaction_bug_demo"
+      MYSQL_USER: "user"
+      MYSQL_PASSWORD: "user-pw"
+      MYSQL_ROOT_PASSWORD: "root-pw"
+    volumes:
+      - "./persist:/var/lib/mysql"
+    # specify port binding in docker-compose.override.yml
