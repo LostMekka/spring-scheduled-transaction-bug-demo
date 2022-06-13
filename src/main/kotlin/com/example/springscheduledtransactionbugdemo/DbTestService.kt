@@ -28,7 +28,7 @@ class DbTestService(
             for (entity in entities) {
                 // if called from SchedulingService, this prints false
                 // if called from TestController, this prints true
-                println("    entity named '${entity.name}' is managed: ${em.contains(entity)}")
+                println("    entity named '${entity.name}' is managed: ${entity in em}")
                 entity.lastChanged = LocalDateTime.now()
             }
         }
